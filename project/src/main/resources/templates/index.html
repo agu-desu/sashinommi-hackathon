@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  lang="ja"
+>
+  <head>
+    <title>Hello</title>
+    <meta charset="utf-8" />
+    <link th:href="@{/css/content.css}" rel="stylesheet" />
+    <script th:src="@{/js/test.js}"></script>
+  </head>
+  <body>
+    <div class="main-box">
+      <div class="main-content">
+        <h1 class="title">ようこそ</h1>
+        <span th:text="${message}"></span>
+        <form action="#" th:action="@{/demo}" th:object="${greeting}" method="post">
+          <button class="btn" onclick="console.log('click')">
+            NEXT
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
