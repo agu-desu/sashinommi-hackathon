@@ -13,11 +13,21 @@
   <body>
     <div class="main-box">
       <div class="main-content">
-        <h1 class="title">ようこそ</h1>
-        <span th:text="${message}"></span>
+        <h1 class="title">input</h1>
+        <p>name</p>
+        <input type="text" id="name" required minlength="1" maxlength="15" size="10"> 
+
+        <p>feeling</p>
+        <select id="feeling">
+          <option value="">感情を選択</option>
+        </select>
+        
+        <p>url</p>
+        <input type="text" id="name" required minlength="1">
+
         <form action="#" th:action="@{/demo}" th:object="${greeting}" method="post">
           <button class="btn" onclick="console.log('click')">
-            NEXT
+            start
           </button>
         </form>
       </div>
