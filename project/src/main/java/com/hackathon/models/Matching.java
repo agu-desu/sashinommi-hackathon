@@ -20,7 +20,7 @@ public class Matching {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "match_id")
-    private String matchId;
+    private Long matchId;
 
     @Column(name = "match_name")
     private String matchName;

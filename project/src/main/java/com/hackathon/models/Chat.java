@@ -18,7 +18,7 @@ public class Chat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="chat_id")
-    private int chatId;
+    private Long chatId;
     
     @Column(name="chat_name")
     private String chatName;
