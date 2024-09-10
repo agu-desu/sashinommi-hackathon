@@ -1,6 +1,6 @@
 package com.hackathon.models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,5 +27,5 @@ public class Chat {
     private String chatMessage;
 
     @Column(name="chat_time")
-    private Date chatTime;
+    private LocalDateTime chatTime;
 }
