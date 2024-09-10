@@ -7,6 +7,22 @@
   <head>
     <title>サシノミ!!</title>
     <meta charset="utf-8" />
+    <script>
+      let intervalId;
+      document.addEventListener('DOMContentLoaded', function() {
+        intervalId = setInterval(function() {
+          console.log("start");
+        }, 10000);
+      });
+
+      // ページが破棄されるときにスケジューリングを解除
+      window.addEventListener('beforeunload', function() {
+          if (intervalId) {
+              clearInterval(intervalId); // タイマーを解除
+              console.log('ページが破棄されるため、スケジューリングが解除されました');
+          }
+      });
+    </script>
   </head>
   <body>
     <h1>待機時掲示板</h1>
