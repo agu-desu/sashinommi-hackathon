@@ -17,15 +17,15 @@ public class Chat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "chat_id")
-    private Long chatId;
-
-    @Column(name = "chat_name")
+    @Column(name="chat_id")
+    private int chatId;
+    
+    @Column(name="chat_name")
     private String chatName;
 
-    @Column(name = "chat_message")
+    @Column(name="chat_message")
     private String chatMessage;
 
-    @Column(name = "chat_time")
+    @Column(name="chat_time")
     private Date chatTime;
 }
