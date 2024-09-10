@@ -1,13 +1,18 @@
 create table IF NOT EXISTS match (
-    matchid integer auto_increment primary key,
-    matchname varchar(15) not null,
-    matchfeeling integer not null,
-    matchurl varchar(150) not null
+    match_id integer auto_increment primary key,
+    match_name varchar(15) not null,
+    match_feeling_id integer not null,
+    match_url varchar(150) not null
+)
+
+create table IF NOT EXISTS feeling (
+    feeling_id integer auto_increment primary key,
+    feeling_name varchar(15) not null
 )
 
 create table IF NOT EXISTS chat (
-    chatid integer auto_increment primary key,
-    chatname varchar(15) not null,
-    chatmessage varchar(200) not null,
-    chattime TIMESTAMP not null
+    chat_id integer auto_increment primary key,
+    chat_name varchar(15) not null,
+    chat_message varchar(200) not null,
+    chat_time TIMESTAMP not null
 )
