@@ -4,11 +4,11 @@ create table IF NOT EXISTS matching (
     match_feeling_id integer not null,
     match_url varchar(150) not null
 );
-
 create table IF NOT EXISTS feeling (
     feeling_id integer auto_increment primary key,
     feeling_name varchar(15) not null
 );
+
 
 create table IF NOT EXISTS chat (
     chat_id integer auto_increment primary key,
