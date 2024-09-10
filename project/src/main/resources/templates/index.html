@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:th="http://www.thymeleaf.org"
-  lang="ja"
->
-  <head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
     <title>サシノミ!!</title>
     <meta charset="utf-8" />
-    <!--<link th:href="@{/css/content.css}" rel="stylesheet" />
-    <script th:src="@{/js/test.js}"></script>-->
-  </head>
-  <body>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
     <div class="main-box">
-      <div class="main-content">
-        <h1 class="title">input</h1>
-        <p>name</p>
-        <input type="text" id="name" required minlength="1" maxlength="15" size="10"> 
-
-        <p>feeling</p>
-        <select id="feeling">
-          <option value="">感情を選択</option>
-        </select>
-        
-        <p>url</p>
-        <input type="text" id="name" required minlength="1">
-
-        <form action="#" th:action="@{/demo}" th:object="${greeting}" method="post">
-          <button class="btn" onclick="console.log('click')">
-            start
-          </button>
-        </form>
-      </div>
+        <div class="main-content">
+            <h1 class="title">Input</h1>
+            <form th:action="@{/chat}" method="post">
+              <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" id="name" name="matchName" class="form-control" required minlength="1" maxlength="15">
+              </div>
+          
+              <div class="mb-3">
+                  <label for="feeling" class="form-label">Feeling</label>
+                  <select id="feeling" name="matchFeelingId" class="form-select" required>
+                      <option value="" disabled selected required minlength="1">感情を選択</option>
+                      <option value="1">リラックスしたい</option>
+                      <option value="2">楽しく騒ぎたい</option>
+                      <option value="3">悩み相談</option>
+                      <option value="4">恋愛トーク</option>
+                  </select>
+              </div>
+          
+              <div class="mb-3">
+                  <label for="url" class="form-label">URL</label>
+                  <input type="text" id="url" name="matchUrl" class="form-control" required minlength="1">
+              </div>
+          
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          
+        </div>
     </div>
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+</body>
 </html>
