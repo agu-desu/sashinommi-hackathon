@@ -1,4 +1,4 @@
-create table IF NOT EXISTS match (
+create table IF NOT EXISTS matching (
     match_id integer auto_increment primary key,
     match_name varchar(15) not null,
     match_feeling_id integer not null,
