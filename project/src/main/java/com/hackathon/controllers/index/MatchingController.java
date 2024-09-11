@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hackathon.models.Matching;
-import com.hackathon.service.MatchingService;
+import com.hackathon.services.MatchingService_2;
 
 @Controller
 public class MatchingController {
 
     @Autowired
-    private MatchingService matchingService;
+    private MatchingService_2 matchingService_2;
 
     @PostMapping("/chat")
     public String submitForm(@ModelAttribute Matching matching) {
-        matchingService.saveMatching(matching);
+        matchingService_2.saveMatching(matching);
         return "nextpage/index";
     }
 }
