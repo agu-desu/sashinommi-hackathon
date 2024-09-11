@@ -56,34 +56,33 @@
         function displayChatMessages(messages) {
           const chatContainer = document.getElementById("chat-container");
 
-          // すでにあるメッセージをクリア
+          //すでにあるメッセージをクリア
           chatContainer.innerHTML = "";
 
           messages.reverse();
 
-          // 取得したメッセージを順番に追加
+          //取得したメッセージを順番に追加
           messages.forEach((message, index) => {
             const messageElement = document.createElement("div");
             messageElement.className = "chat-message";
 
-            // メッセージの内容を設定
+            //メッセージの内容を設定
             messageElement.textContent = `${message.name}: ${message.message}: ${message.sendTime}`;
 
-            // ユーザーごとにスタイルを変更する場合
+            //ユーザーごとにスタイルを変更する場合
             if (index % 2 === 0) {
-              // 偶数番目のメッセージ
+              //偶数番目のメッセージ
               messageElement.classList.add("user-message");
             }
 
-            // チャットコンテナにメッセージを追加
+            //チャットコンテナにメッセージを追加
             chatContainer.appendChild(messageElement);
           });
 
-          // 最新のメッセージにスクロール
+          //最新のメッセージにスクロール
           chatContainer.scrollTop = chatContainer.scrollHeight;
         }
       });
-
       // ページが破棄されるときにスケジューリングを解除
       //                        matchingのレコードも削除
       window.addEventListener("beforeunload", function () {
