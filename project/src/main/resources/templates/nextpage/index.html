@@ -24,7 +24,12 @@
       });
     </script>
   </head>
-  <body>
+    <div th:if="${url} != null">
+      <p>マッチング完了<br>URL:<span th:text="${url}"></span></p>
+    </div>
+    <div th:if="${url} == null">
+      <p>マッチング中</p>
+    </div>    
     <h1>待機時掲示板</h1>
     <div id="messages"></div>
   </body>
