@@ -43,8 +43,25 @@ public class MatchingService {
     private String matched(Matching yourself, Matching opp) {
         String url;
         url = opp.getMatchUrl();
-        matchingRepository.deleteById(yourself.getMatchId());
-        matchingRepository.deleteById(opp.getMatchId());
+        try{
+            matchingRepository.deleteById(yourself.getMatchId());
+            matchingRepository.deleteById(opp.getMatchId());
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+            return null;
+        }
         return url;
+    }
+
+    public void deleteMatch(long matchingId) {
+        try{
+            matchingRepository.deleteById(matchingId);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+            return;
+        }
+        return;
     }
 }

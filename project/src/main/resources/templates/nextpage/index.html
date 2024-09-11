@@ -85,12 +85,18 @@
       });
 
       // ページが破棄されるときにスケジューリングを解除
+      //                        matchingのレコードも削除
       window.addEventListener("beforeunload", function () {
         if (intervalId) {
           clearInterval(intervalId); // タイマーを解除
-          console.log(
-            "ページが破棄されるため、スケジューリングが解除されました"
-          );
+
+          let matchingId = /*[[${matchingId}]]*/"lost";
+          matchingId = toString(matchingId)
+          let url = 'http://localhost:8080/api/deleteMatch?matchingId=';
+          url += matchingId;
+          fetch(url, {
+            method:'GET',
+          }).catch(e);
         }
       });
     </script>
