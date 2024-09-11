@@ -2,3 +2,11 @@
     width: 100%;
     height: auto;
 }
+.form-label{
+    font-size: large;
+}
+.side_image{
+    width: 80%;
+    height: auto;
+    margin-top: 100%;
+}

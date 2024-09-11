@@ -18,20 +18,22 @@
     </style>
 </head>
 <body>
-  <div class="container">
-    <div class="row ">
-      <div class="col-2" style="background-color: antiquewhite;">Left 2</div>
-        <div class="col-8 px-0">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2" style="background-color: antiquewhite;">
+        <img class="side_image" src="/images/gorira.png">
+      </div>
+        <div class="col-8">
           <img class="logo" src="/images/logo2.png">
-            <h1 class="title">Input</h1>
-            <form id="zoomForm" th:action="@{/chat}" method="post">
+            <h2 class="title">プロフィールを入力してください</h2>
+            <form th:action="@{/chat}" method="post">
               <div class="mb-3">
-                  <label for="name" class="form-label">Name</label>
+                  <label for="name" class="form-label">名前</label>
                   <input type="text" id="name" name="matchName" class="form-control" required minlength="1" maxlength="15">
               </div>
           
               <div class="mb-3">
-                  <label for="feeling" class="form-label">Feeling</label>
+                  <label for="feeling" class="form-label">気分</label>
                   <select id="feeling" name="matchFeelingId" class="form-select" required>
                       <option value="" disabled selected required minlength="1">感情を選択</option>
                       <option value="1">リラックスしたい</option>
@@ -46,11 +48,12 @@
                   <input type="text" id="url" name="matchUrl" class="form-control" required minlength="1">
                   <div class="error-message" id="error-message">正しいZoomのURLを入力してください（例：https://us04web.zoom.us/j/123456789?pwd=abc123）</div>
               </div>
-          
               <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
-    <div class="col-2 px-0" style="background-color: antiquewhite;">Right 2</div>
+    <div class="col-2" style="background-color: antiquewhite;">
+      <img class="side_image" src="/images/piyopiyo.png">
+    </div>
   </div>
   </div>
 
