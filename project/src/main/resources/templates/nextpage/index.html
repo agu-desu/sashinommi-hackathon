@@ -88,12 +88,14 @@
         function fetchChatData() {
           return fetch("/api/getChat")
             .then((response) => {
-              if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-              }
+              // if (!response.ok) {
+              //   throw new Error(`HTTP error! Status: ${response.status}`);
+              // }
               return response.json();
             })
-            .catch(handleFetchError);
+            .catch(e => {
+              console.error(e);
+            });
         }
 
         // エラーハンドリング
@@ -163,6 +165,13 @@
 
     <!-- チャットコンテナ -->
     <div id="chat-container"></div>
+    <form action="#" th:action="@{/register}" th:object="${chatForm}" method="post">
+      <input type="hidden" name="name" th:value="${chatName}"/>
+      <input type="text" id="message" name="message" th:filed="*{message}" required />
+      <button type="submit">送信</button>
+    </form>
+  </body>
+
 
     <!-- マッチングデータ -->
     <div id="matching-data" th:data-matching-id="${matchingId}"></div>

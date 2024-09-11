@@ -1,25 +1,26 @@
 package com.hackathon.controllers.nextPage;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import com.hackathon.services.ChatService;
 import com.hackathon.Form.ChatForm;
+import com.hackathon.services.ChatService;
 
-@RestController
+@Controller
 public class ChatController {
 
     @Autowired
     ChatService chatService;
 
-    @GetMapping("/api/getChat")
-    public List<ChatForm> getMethodName() {
-        List<ChatForm> chats = chatService.getChat();
-        return chats;
+    @PostMapping("/register")
+    public String register(@ModelAttribute ChatForm chatForm, Model model) {
+        chatService.registerChat(chatForm);
+        ChatForm chat = new ChatForm();
+        chat.setName(chatForm.getName());
+        model.addAttribute("chatForm", chat);
+        return "nextpage/index";
     }
-
 }
