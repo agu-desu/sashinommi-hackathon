@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.hackathon.Form.ChatForm;
 import com.hackathon.services.MatchingService;
 
 @Controller
@@ -15,10 +16,11 @@ public class NextPageController {
     private MatchingService matchingService;
 
     @GetMapping(value = "/demo")
-    public String index(Model model, @RequestParam("matchingId") Long matchingId) {
+    public String index(Model model, @RequestParam("matchingId") Long matchingId, @RequestParam("name") String name) {
         String url = matchingService.matching(matchingId);
-        model.addAttribute(
-                "url", url);
+        model.addAttribute("url", url);
+        model.addAttribute("chatName", name);
+        model.addAttribute("chatForm", new ChatForm());
         return "nextpage/index";
     }
 }
