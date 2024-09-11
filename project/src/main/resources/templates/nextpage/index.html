@@ -85,14 +85,19 @@
       });
 
       // ページが破棄されるときにスケジューリングを解除
+      //                        matchingのレコードも削除
       window.addEventListener("beforeunload", function () {
         if (intervalId) {
           clearInterval(intervalId); // タイマーを解除
-          console.log(
-            "ページが破棄されるため、スケジューリングが解除されました"
-          );
+
+          let matchingId = document.getElementById('matching-data').getAttribute('data-matching-id');
+          let url = '/api/deleteMatch?matchingId=';
+          url += matchingId;
+          navigator.sendBeacon(url);
         }
       });
+
+      
     </script>
   </head>
     <div th:if="${url} != null">
@@ -104,5 +109,7 @@
     <h1>待機時掲示板</h1>
     <div id="messages"></div>
     <div id="chat-container"></div>
+
+    <div id="matching-data" th:data-matching-id="${matchingId}"></div>
   </body>
 </html>
