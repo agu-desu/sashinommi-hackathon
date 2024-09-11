@@ -93,11 +93,6 @@
           let matchingId = document.getElementById('matching-data').getAttribute('data-matching-id');
           let url = '/api/deleteMatch?matchingId=';
           url += matchingId;
-          /*fetch(url, {
-            method:'GET',
-          }).catch(e => {
-            console.error(e);
-          });*/
           navigator.sendBeacon(url);
         }
       });
@@ -116,6 +111,5 @@
     <div id="chat-container"></div>
 
     <div id="matching-data" th:data-matching-id="${matchingId}"></div>
-    <p>matchingId:<span th:text="${matchingId}"></span></p>
   </body>
 </html>
