@@ -1,11 +1,12 @@
 package com.hackathon.services;
-import org.springframework.beans.factory.annotation.Autowired; 
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hackathon.models.Matching;
 import com.hackathon.repositories.MatchingRepository;
-
-import java.util.List;
 
 @Service
 public class MatchingService {
@@ -13,30 +14,28 @@ public class MatchingService {
     @Autowired
     private MatchingRepository matchingRepository;
 
-    public String matching() {
-        long matchingId = 1; // 本来は受け取る
+    public String matching(Long matchingId) {
         try {
-            Matching matching = matchingRepository.getById(matchingId);
+            Matching matching = matchingRepository.getReferenceById(matchingId);
             List<Matching> allMatching = matchingRepository.findAll();
-    
+
             long feelingId = matching.getMatchFeelingId();
-            
-            for( Matching m : allMatching) {
-                if(matchingId == m.getMatchId()) {
+
+            for (Matching m : allMatching) {
+                if (matchingId == m.getMatchId()) {
                     continue;
                 }
-    
-                if(feelingId == m.getMatchFeelingId()) {
+
+                if (feelingId == m.getMatchFeelingId()) {
                     String url = matched(matching, m);
                     return url;
                 }
             }
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
-        
+
         return null;
     }
 

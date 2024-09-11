@@ -16,7 +16,8 @@ public class MatchingController {
 
     @PostMapping("/chat")
     public String submitForm(@ModelAttribute Matching matching) {
-        matchingService_2.saveMatching(matching);
-        return "nextpage/index";
+        Matching savedMatching = matchingService_2.saveMatching(matching);
+        Long matchingId = savedMatching.getMatchId();
+        return "redirect:/demo?matchingId=" + matchingId;
     }
 }
