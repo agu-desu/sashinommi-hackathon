@@ -19,8 +19,8 @@ public class ChatController {
     public String register(@ModelAttribute ChatForm chatForm, Model model) {
         chatService.registerChat(chatForm);
         ChatForm chat = new ChatForm();
-        chat.setName(chatForm.getName());
-        model.addAttribute("chatForm", chat);
+        model.addAttribute("chatName", chatForm.getName());
+        model.addAttribute("chatForm", new ChatForm());
         return "nextpage/index";
     }
 }
