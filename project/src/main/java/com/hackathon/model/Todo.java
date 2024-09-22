@@ -1,4 +1,4 @@
-package com.hackathon.models;
+package com.hackathon.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

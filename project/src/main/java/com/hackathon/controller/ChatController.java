@@ -1,4 +1,4 @@
-package com.hackathon.controllers.nextPage;
+package com.hackathon.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.hackathon.Form.ChatForm;
-import com.hackathon.services.ChatService;
+import com.hackathon.form.ChatForm;
+import com.hackathon.service.ChatService;
 
 @Controller
 public class ChatController {
@@ -21,6 +21,6 @@ public class ChatController {
         ChatForm chat = new ChatForm();
         model.addAttribute("chatName", chatForm.getName());
         model.addAttribute("chatForm", new ChatForm());
-        return "nextpage/index";
+        return "chat/index";
     }
 }

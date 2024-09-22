@@ -1,4 +1,4 @@
-version: "3.8"
+# version: "3.8" 最新のdockerではバージョンの宣言が必要ないらしい
 services:
   app:
     build: ./
@@ -25,7 +25,7 @@ services:
     restart: always
     ports: #ローカルでmysqld.exeが動いているため、ホスト側のポートを3330に変更
       - 3330:3306
-    environment:
+    environment: 
       MYSQL_ROOT_PASSWORD: test
       MYSQL_USER: jun
       MYSQL_DATABASE: demo

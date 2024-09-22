@@ -1,4 +1,4 @@
-package com.hackathon.models;
+package com.hackathon.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,14 +10,14 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "feeling")
-public class Feeling {
+@Table(name = "emotion")
+public class Emotion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "feeling_id")
-    private Long feelingId;
+    @Column(name = "emotion_id")
+    private Long emotionId;
 
-    @Column(name = "feeling_name")
-    private String feelingName;
+    @Column(name = "emotion_name")
+    private String emotionName;
 }

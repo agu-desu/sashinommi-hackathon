@@ -1,10 +1,10 @@
-package com.hackathon.services;
+package com.hackathon.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hackathon.models.Matching;
-import com.hackathon.repositories.MatchingRepository;
+import com.hackathon.model.Matching;
+import com.hackathon.repository.MatchingRepository;
 
 @Service
 public class MatchingService_2 {
