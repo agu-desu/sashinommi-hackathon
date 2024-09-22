@@ -1,4 +1,4 @@
-package com.hackathon.services;
+package com.hackathon.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hackathon.Form.ChatForm;
-import com.hackathon.models.Chat;
-import com.hackathon.repositories.ChatRepository;
+import com.hackathon.form.ChatForm;
+import com.hackathon.model.Chat;
+import com.hackathon.repository.ChatRepository;
 
 @Service
 public class ChatService {

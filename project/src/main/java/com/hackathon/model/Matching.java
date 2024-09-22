@@ -1,4 +1,4 @@
-package com.hackathon.models;
+package com.hackathon.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,8 +25,8 @@ public class Matching {
     @Column(name = "match_name")
     private String matchName;
 
-    @Column(name = "match_feeling_id")
-    private Long matchFeelingId;
+    @Column(name = "match_emotion_id")
+    private Long matchemotionId;
 
     @Column(name = "match_url")
     private String matchUrl;

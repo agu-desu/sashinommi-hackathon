@@ -1,7 +1,10 @@
-package com.hackathon.Form;
+package com.hackathon.form;
 
 import java.time.LocalDateTime;
 
+import lombok.Data;
+
+@Data
 public class ChatForm {
     
     /** ユーザー名 */
@@ -12,54 +15,5 @@ public class ChatForm {
 
     /**  送信時間*/
     private LocalDateTime sendTime;
-
-    /**
-     * 
-     * @return
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * 
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * 
-     * @return
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    /**
-     * 
-     * @param message
-     */
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    /**
-     * 送信時間を返します。
-     * @return
-     */
-    public LocalDateTime getSendTime() {
-        return sendTime;
-    }
-
-    /**
-     * 
-     * @param sendTime
-     */
-    public void setSendTime(LocalDateTime sendTime) {
-        this.sendTime = sendTime;
-    }
-
 
 }
