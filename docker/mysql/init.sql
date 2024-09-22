@@ -1,12 +1,12 @@
 create table IF NOT EXISTS matching (
     match_id integer auto_increment primary key,
     match_name varchar(15) not null,
-    match_feeling_id integer not null,
+    match_emotion_id integer not null,
     match_url varchar(150) not null
 );
-create table IF NOT EXISTS feeling (
-    feeling_id integer auto_increment primary key,
-    feeling_name varchar(15) not null
+create table IF NOT EXISTS emotion (
+    emotion_id integer auto_increment primary key,
+    emotion_name varchar(15) not null
 );
 
 
@@ -17,7 +17,7 @@ create table IF NOT EXISTS chat (
     chat_time TIMESTAMP not null
 );
 
-delete from feeling;
+delete from emotion;
 
-insert into feeling (feeling_id, feeling_name)
+insert into emotion (emotion_id, emotion_name)
 values (1,'リラックスしたい'), (2,'楽しく騒ぎたい'),(3,'悩み相談'),(4,'恋愛トーク');
