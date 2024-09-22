@@ -8,7 +8,7 @@
     
     <style>
         html, body {
-          cursor: url('/images/ビール.png') 8 8, default;
+          cursor: url('images/beer.png') 8 8, default;
           height: 100%;
           margin: 0;
         }
@@ -39,10 +39,10 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-2" style="background-color: antiquewhite;">
-        <img class="side_image" src="/images/gorira.png">
+        <img class="side_image" src="images/gorira.png">
       </div>
       <div class="col-8">
-        <img class="logo" src="/images/logo2.png">
+        <img class="logo" src="images/logo2.png">
         <h2 class="title">プロフィールを入力してください</h2>
         <form id="zoomForm" th:action="@{/chat}" method="post">
           <div class="mb-3">
@@ -50,13 +50,16 @@
               <input type="text" id="name" name="matchName" class="form-control" required minlength="1" maxlength="15">
           </div>
           <div class="mb-3">
-              <label for="feeling" class="form-label">気分</label>
-              <select id="feeling" name="matchFeelingId" class="form-select" required>
-                  <option value="" disabled selected required minlength="1">感情を選択</option>
+              <label for="emotion" class="form-label">気分</label>
+              <select id="emotion" name="matchemotionId" class="form-select" required>
+                <th:each="item:${emotionList}";>
+                  <option th:each="item:${emotionList}" th:value="${item.emotionId}" th:text="${item.emotionName}"></option>
+                </th:each>
+                  <!-- <option value="" disabled selected required minlength="1">感情を選択</option>
                   <option value="1">リラックスしたい</option>
                   <option value="2">楽しく騒ぎたい</option>
                   <option value="3">悩み相談</option>
-                  <option value="4">恋愛トーク</option>
+                  <option value="4">恋愛トーク</option> -->
               </select>
           </div>
           <div class="mb-3">
@@ -70,7 +73,7 @@
           </form>
       </div>
       <div class="col-2" style="background-color: antiquewhite;">
-        <img class="side_image" src="/images/piyopiyo.png">
+        <img class="side_image" src="images/piyopiyo.png">
       </div>
     </div>
   </div>
